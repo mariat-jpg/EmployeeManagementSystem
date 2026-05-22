@@ -30,10 +30,3 @@ Steps to set up and run the project
    - Build the solution (Ctrl + Shift + B)
    - Press F5 to run
 
-  
-   - Default Admin Credentials
-  
-     
-     Username: ADMIN
-     Password: AdminPass123!
-
