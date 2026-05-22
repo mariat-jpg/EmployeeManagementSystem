@@ -1,17 +1,20 @@
 # EmployeeManagementSystem
-A full-stack employee management web application built on ASP.NET MVC with role-based authentication, complete CRUD functionality, and SQL Server database integration via stored procedures.\
+A full-stack employee management web application built on ASP.NET MVC with role-based authentication, complete CRUD functionality, and SQL Server database integration via stored procedures.
+
 
 Features
 - Admin and standard user roles with separate access levels
 - Employee record management — create, view, edit, and delete
 - User authentication and registration with CSRF protection
 - Database operations via ADO.NET and SQL Server stored procedures
-- Clean MVC architecture with Razor Views\
+- Clean MVC architecture with Razor Views
+  
 
 Prerequisites
 - Visual Studio 2022 (with ASP.NET and web development workload)
 - SQL Server Express
-- SQL Server Management Studio (SSMS)\
+- SQL Server Management Studio (SSMS)
+  
 
 Steps to set up and run the project
 1. Clone the repository
@@ -29,6 +32,8 @@ Steps to set up and run the project
 
   
    - Default Admin Credentials
+  
+     
      Username: ADMIN
      Password: AdminPass123!
 
