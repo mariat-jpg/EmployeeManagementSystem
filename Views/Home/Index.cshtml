@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Welcome to the Employee Management System</h1>
+<p style="text-align:center;">Use the link below to manage employee records.</p>
+
+<p style="text-align:center;">Don't have an account? <a href="@Url.Action("SignUp", "Login")" class="btn btn-success">Register here</a></p>
+<p style="text-align:center;">Already have an account? <a href="@Url.Action("SignIn", "Login")" class="btn btn-success">Login here</a></p>
