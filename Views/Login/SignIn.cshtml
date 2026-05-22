@@ -1,0 +1,80 @@
+﻿@model Employee.Models.Login
+
+@{
+	ViewBag.Title = "Login";
+}
+
+<style>
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh; 
+    }
+
+    .login-box {
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        background-color: #f9f9f9;
+        width: 500px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="login-container">
+    <div class="login-box">
+        <h2>Login Page</h2>
+        @using (Html.BeginForm("SignIn", "Login", FormMethod.Post, new { id = "loginForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group" id="usernameGroup">
+                    @Html.LabelFor(model => model.username, new { @id = "usernameLabel" })
+                    @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", @id = "username" } })
+                    <span id="usernameError" class="text-danger"></span>
+                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group" id="passwordGroup">
+                    @Html.LabelFor(model => model.password, new { @id = "passwordLabel" })
+                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @id = "password" } })
+                    <span id="passwordError" class="text-danger"></span>
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                </div>
+                <input type="submit" value="Login" class="btn btn-primary mt-3" />
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () 
+    {
+        const usernameInput = document.getElementById("username");
+
+        usernameInput.addEventListener("keypress", function (event) 
+        {
+            const char = String.fromCharCode(event.which);
+            if (!/^[a-zA-Z]$/.test(char)) 
+            {
+                event.preventDefault(); 
+            }
+        });
+    });
+</script>
+
+@section scripts
+{<script src="~/js/loginpage.js"></script>}
