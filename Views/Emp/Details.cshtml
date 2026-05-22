@@ -1,0 +1,15 @@
+﻿@model Employee.Models.Emp_Data
+
+<h1>Employee Details</h1>
+
+<div>
+	</hr>
+	<ul>
+		<li><strong>Employee ID: </strong>@Model.Emp_ID</li>
+		<li><strong>Employee Name: </strong>@Model.Emp_Name</li>
+		<li><strong>Salary: </strong>@Model.Salary</li>
+	</ul>
+	<button>
+		@Html.ActionLink("Back to List", "Index")
+	</button>
+</div>

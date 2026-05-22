@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Employee.Models.Emp_Data>
+
+<h1>Employee Details</h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Employee ID</th>
+			<th>Employee Name</th>
+			<th>Salary</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var emp in Model)
+		{
+			if (emp == null)
+			{
+				<tr><td colspan="4">Null employee object found!</td></tr>
+				continue;
+			}
+			<tr>
+				<td>@emp.Emp_ID</td>
+				<td>@emp.Emp_Name</td>
+				<td>@emp.Salary</td>
+				<td>
+					<a asp-action="Details" asp-route-id="@emp.Emp_ID">Details</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
